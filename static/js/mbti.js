@@ -14,8 +14,8 @@ var q = {
   8:{"prob":"Only 24 hours left until your day trip with bae. You will most likely say...","pType":"JP","A":"I already made brunch/dinner reservations & know where we will go/what we will do","B":"Why prepare? The best things happen spontaneously. I know we will have so much fun."},
   9:{"prob":"When I meet someone new...","pType":"EI","A":"I don't like this awkwardness. I will try to start a conversation.","B":"I won't start a conversation unless the person initiates it."},
   10:{"prob":"If you have only 1 more day to live and you have $1,000,000,000, what would you do?","pType":"SN","A":"Spend everything right away for myself.","B":"Go to the bank, make a new account, prepare a document to pass on the money to someone else"},
-  11:{"prob":"After years of hard work and saving money, your friend just announced \"Hey, I finally bought a car!\". The first thing you say is...","pType":"TF","A":"Which car did you get? How much was it?","B":"Wow! Congrats :D Your hard work finally paid off!"},
-  12:{"prob":"When writing the RLST 121 final paper, I...","pType":"JP","A":"first do some research on my topic, gather data, make an outline, then start writing.","B":"first write something down, do research and fill in the gaps as I write."},
+  11:{"prob":"After years of hard work and saving money, your friend just announced \"Hey, I finally bought a car!\" The first thing you say is...","pType":"TF","A":"Which car did you get? How much was it?","B":"Wow! Congrats :D Your hard work finally paid off!"},
+  12:{"prob":"When writing the RLST 121 final paper, I...","pType":"JP","A":"first do some research on my topic, gather data, make an outline, then start writing.","B":"first write something down, do research and fill in the gaps as I write."}
 }
 
 d3.csv('/static/data/mbti_data.csv')
@@ -77,7 +77,7 @@ function next(){
   }
 }
 
-function changeBGsize(){
+function changeBGsize() {
   var body = document.body,
     html = document.documentElement;
   var heightimg = Math.max(
