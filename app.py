@@ -25,7 +25,8 @@ def facereader():
 
 @app.route("/sajupalja")
 def sajupalja():
-  content = unse.all()
+  # content = unse.all()
+  content = "helloworld!"
   return render_template("sajupalja.html", sajuresult = content)
 
 if __name__ == "__main__":
