@@ -18,7 +18,6 @@ article {
 }
 
 .saju_explanation {
-  display: none;
   background-color: wheat;
   border-radius: 25px;
   padding-right: 20px;
@@ -30,7 +29,7 @@ article {
 }
 
 .sajuform{
-  /* display:none; */
+  display:none;
   background-color: wheat;
   border-radius: 25px;
   padding-right: 20px;

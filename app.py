@@ -31,7 +31,12 @@ def sajupalja():
 def calc():
   # content = unse.all()
   name = request.form['name_input']
-  return render_template("sajupalja-result.html", rName = name)
+  year = request.form['year_input']
+  month = request.form['month_input']
+  day = request.form['day_input']
+  hour = request.form['hour_input']
+  sex = request.form['sex_input']
+  return render_template("sajupalja-result.html", rName=name, rYear=year, rMonth=month, rDay=day, rHour=hour, rSex=sex)
 
 if __name__ == "__main__":
   app.run()

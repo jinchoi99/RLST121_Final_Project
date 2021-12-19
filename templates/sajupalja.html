@@ -81,20 +81,14 @@
             <h5 class="mx-auto my-auto text-center">Sex Assigned <br>at Birth: </h5>
           </div>
           <div class="col-1 my-auto" style="padding: 0;">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="male" id="male">
-              <label class="form-check-label" for="male">
-                Male
-              </label>
-            </div>
+            <span>
+              <input type="radio" name="sex_input" id="sex_m" value="Male" checked=""> <label for="sex_m">Male</label>
+            </span>
           </div>
           <div class="col-1 my-auto" style="padding: 0;">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="female" id="female">
-              <label class="form-check-label" for="female">
-                Female
-              </label>
-            </div>
+            <span>
+              <input type="radio" name="sex_input" id="sex_f" value="Female"> <label for="sex_f">Female</label> 
+            </span>
           </div>
         </div>
         <div class="mt-2 row">
@@ -104,15 +98,15 @@
             <h5 class="mx-auto my-auto text-center">Date of birth: </h5>
           </div>
           <div class="col-1 my-auto" style="padding: 0;">
-            <select class="form-select" aria-label="Default select example" name="byear" id="byear">
+            <select class="form-select" aria-label="Default select example" name="year_input" id="byear">
             </select>
           </div>
           <div class="col-1" style="padding: 0;">
-            <select class="form-select" aria-label="Default select example" name="bmonth" id="bmonth">
+            <select class="form-select" aria-label="Default select example" name="month_input" id="bmonth">
             </select>
           </div>
           <div class="col-1" style="padding: 0;">
-            <select class="form-select" aria-label="Default select example" name="bday" id="bday">
+            <select class="form-select" aria-label="Default select example" name="day_input" id="bday">
             </select>
           </div>
         </div>
@@ -123,7 +117,20 @@
             <h5 class="mx-auto my-auto text-center">Hour of birth: </h5>
           </div>
           <div class="col-3 my-auto" style="padding: 0;">
-            <select class="form-select" aria-label="Default select example" name="bhour" id="bhour">
+            <select class="form-select" aria-label="Default select example" name="hour_input" id="bhour">
+              <option value="0">I'm not sure</option>
+              <option value="01">子 (23:30 ~ 01:29)</option>
+              <option value="02">丑 (01:30 ~ 03:29)</option>
+              <option value="04">寅 (03:30 ~ 05:29)</option>
+              <option value="06">卯 (05:30 ~ 07:29)</option>
+              <option value="08">辰 (07:30 ~ 09:29)</option>
+              <option value="10">巳 (09:30 ~ 11:29)</option>
+              <option value="12">午 (11:30 ~ 13:29)</option>
+              <option value="14">未 (13:30 ~ 15:29)</option>
+              <option value="16">申 (15:30 ~ 17:29)</option>
+              <option value="18">酉 (17:30 ~ 19:29)</option>
+              <option value="20">戌 (19:30 ~ 21:29)</option>
+              <option value="22">亥 (21:30 ~ 23:29)</option>
             </select>
           </div>
         </div>

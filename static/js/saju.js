@@ -4,7 +4,7 @@ function start() {
   location.href = "#"
 }
 
-function filldrop() {
+function fillYears() {
   let opts = ""
   for (let i = 1930; i < 1980; i++) {
     opts += `<option value="${i}">${i}</option>`;
@@ -16,4 +16,22 @@ function filldrop() {
   document.getElementById("byear").innerHTML += opts;
 }
 
-filldrop();
+function fillMonths() {
+  let opts = ""
+  for (let i = 1; i <=12; i++) {
+    opts += `<option value="${i}">${i}</option>`;
+  }
+  document.getElementById("bmonth").innerHTML += opts;
+}
+
+function fillDays() {
+  let opts = ""
+  for (let i = 1; i <=31; i++) {
+    opts += `<option value="${i}">${i}</option>`;
+  }
+  document.getElementById("bday").innerHTML += opts;
+}
+
+fillYears();
+fillMonths();
+fillDays();
