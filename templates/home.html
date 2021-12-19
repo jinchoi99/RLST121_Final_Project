@@ -15,7 +15,7 @@
     <title>Digital Divination</title>
 </head>
 <body>
-  <img class="bgimage" id= "bgimageid" src="/images/null.png" alt="">
+  <img class="bgimage" id= "bgimageid" src="../static/images/null.png" alt="">
   <nav class="navbar navbar-expand-lg navbar-dark mb-5" style="background-color:rgb(174, 46, 46); height: 45px;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">RLST121</a>
@@ -57,7 +57,7 @@
     <div class="row">
       <div class="col-md-6 col-12">
         <div class="card mx-auto mb-5">
-          <img src="/images/mbti.jpg" class="card-img-top" alt="MBTI image">
+          <img src="../static/images/mbti.jpg" class="card-img-top" alt="MBTI image">
           <div class="card-body">
             <h5 class="card-title">MBTI Test</h5>
             <p class="card-text">Fun MBTI test. blahblah  the purpose of this project is to explore not only about digital divination but also the process of performing self diagnosis through online platform and ppl r familiar w mbti and a nice way to test that. </p>
@@ -67,7 +67,7 @@
       </div>
       <div class="col-md-6 col-12">
         <div class="card mx-auto mb-5">
-          <img src="/images/face.jpg" class="card-img-top faceimg" alt="관상 image">
+          <img src="../static/images/face.jpg" class="card-img-top faceimg" alt="관상 image">
           <div class="card-body">
             <h5 class="card-title">Face Reader (관상) Test</h5>
             <p class="card-text">educational context like what 관상 사주 means, how to interpret them, how it relates to religion and culture in South Korea.</p>
@@ -79,7 +79,7 @@
     <div class="row">
       <div class="col-md-6 col-12">
         <div class="card mx-auto mb-5">
-          <img src="/images/saju.jpg" class="card-img-top" alt="Saju image">
+          <img src="../static/images/saju.jpg" class="card-img-top" alt="Saju image">
           <hr style="margin: 0;">
           <div class="card-body">
             <h5 class="card-title">SajuPalja (사주팔자) Test</h5>
@@ -106,8 +106,7 @@
     html = document.documentElement;
     var heightimg = Math.max( body.scrollHeight, body.offsetHeight, 
     html.clientHeight, html.scrollHeight, html.offsetHeight );
-    // document.getElementById("bgimageid").style.height = ""+(heightimg)+"px";
-    document.getElementById("bgimageid").style.height = `${heightimg}px`
+    document.getElementById("bgimageid").style.height = `${heightimg}px`;
   </script>
 </body>
 </html>
