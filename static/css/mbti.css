@@ -34,9 +34,10 @@ article {
 }
 
 #resultImg {
-  width: 300px;
-  height: 300px;
+  /* width: 300px;
+  height: 300px; */
   margin: 0 auto;
+  border-radius: 25px;
 }
 
 .mbti_explanation {
