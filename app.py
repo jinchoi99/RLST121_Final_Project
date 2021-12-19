@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, flash
+import unse
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -23,7 +25,8 @@ def facereader():
 
 @app.route("/sajupalja")
 def sajupalja():
-  return render_template("sajupalja.html")
+  content = unse.all()
+  return render_template("sajupalja.html", sajuresult = content)
 
 if __name__ == "__main__":
   app.run()
