@@ -27,6 +27,7 @@ d3.csv('/static/data/mbti_data.csv')
 function start() {
   $(".start").hide();
   $(".question").show();
+  location.href = "#"
   next();
 }
 $("#A").click(function(){
