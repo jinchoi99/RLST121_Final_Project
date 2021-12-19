@@ -1,0 +1,27 @@
+1. Create virtual python environment
+$ python3 -m venv tutorial-env //create Python Virtual Environment
+$ source tutorial-env/bin/activate //activate in terminal
+- select Python virtual version in VSCode //select interpreter
+
+2. git connect to remote repo in github
+- .gitignore --> python virtual env
+$ git init
+$ git remote add origin https://github.com/jinchoi99/RLST121_Final_Project.git
+$ git branch -M main
+$ git push -u origin main
+
+2. Install Flask
+$ pip install flask
+$ export FLASK_ENV=development
+$ flask run
+
+2. Create Flask app folders, files
+- Files inside of the static folder are available to users of the application via HTTP. This is the place where CSS and JavaScript files go.
+- Inside templates folder, Flask will look for Jinja2 templates. You will see examples of this later on.
+- static/ css,js,images/ index.css
+- templates/ index.html
+- app.py
+
+3. Jinja
+- The Python framework Flask has inbuilt support for a dynamic templating engine known as Jinja.
+- https://www.educative.io/edpresso/what-are-jinja2-templates
