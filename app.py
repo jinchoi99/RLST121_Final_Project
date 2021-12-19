@@ -25,9 +25,13 @@ def facereader():
 
 @app.route("/sajupalja")
 def sajupalja():
+  return render_template("sajupalja.html")
+
+@app.route("/calc", methods=["POST", "GET"])
+def calc():
   # content = unse.all()
-  content = "helloworld!"
-  return render_template("sajupalja.html", sajuresult = content)
+  name = request.form['name_input']
+  return render_template("sajupalja-result.html", rName = name)
 
 if __name__ == "__main__":
   app.run()
