@@ -18,7 +18,11 @@ article {
 }
 
 .question {
-  display: none;
+  /* display: none; */
+  background-color: wheat;
+  border-radius: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .result {
@@ -36,6 +40,7 @@ article {
   border-radius: 25px;
   padding-right: 20px;
   padding-left: 20px;
+  display: none;
 }
 
 .double-space {
