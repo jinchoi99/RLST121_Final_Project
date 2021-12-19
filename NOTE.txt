@@ -2,6 +2,8 @@
 $ python3 -m venv tutorial-env //create Python Virtual Environment
 $ source tutorial-env/bin/activate //activate in terminal
 - select Python virtual version in VSCode //select interpreter
+- pip freeze > requirements.txt
+- pip install -r requirements.txt
 
 2. git connect to remote repo in github
 - .gitignore --> python virtual env
@@ -25,3 +27,12 @@ $ flask run
 3. Jinja
 - The Python framework Flask has inbuilt support for a dynamic templating engine known as Jinja.
 - https://www.educative.io/edpresso/what-are-jinja2-templates
+
+4. Deploy to Heroku
+- install python server
+- $ pip install gunicorn
+- create Procfile
+web: gunicorn app:app
+- create new app
+- settings > add build pack, add python
+- deply > connect to github
