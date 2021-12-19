@@ -1,0 +1,13 @@
+.bgimage {
+  background-color: #e0d4b3;
+  background-image: url('/static/images/religion.png');
+  background-size: 39%;
+  background-position-y: 20em;
+  position: absolute;
+  opacity: 0.15;
+  width: 100%;
+}
+
+#project_title {
+  font-family: 'Redressed', cursive;
+}
