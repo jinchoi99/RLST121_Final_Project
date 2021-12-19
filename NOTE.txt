@@ -35,4 +35,13 @@ $ flask run
 web: gunicorn app:app
 - create new app
 - settings > add build pack, add python
-- deply > connect to github
+ & for selenium on heroku,
+- Step 2: Add the Buildpacks
+Python (Select it from the officially supported buildpacks)
+Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome
+Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver
+- Step 3: Add the Config Vars
+Scroll to the config vars section. Here, we will add the paths to Chrome and the Chromedriver. Add the following config vars:
+CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver
+GOOGLE_CHROME_BIN = /app/.apt/usr/bin/google-chrome
+- deploy > connect to github
