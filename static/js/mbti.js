@@ -1,4 +1,8 @@
 var currQ = 1;
+var totQNum = 12;
+let mbtiData = [];
+const results = [];
+
 var q = {
   1:{"prob":"문제1","pType":"EI","A":"E","B":"I"},
   2:{"prob":"문제2","pType":"SN","A":"S","B":"N"},
@@ -13,24 +17,24 @@ var q = {
   11:{"prob":"문제11","pType":"TF","A":"T","B":"F"},
   12:{"prob":"문제12","pType":"JP","A":"J","B":"P"},
 }
-var totQNum = Object.keys(q).length;
-let mbtiData = [];
-const results = [];
-d3.csv('mbti.csv')
-    .then((data) => {
-        mbtiData = data;
-    console.log(mbtiData)});
+
+d3.csv('/static/data/mbti_data.csv')
+  .then((data) => {
+    mbtiData = data;
+    // console.log(mbtiData)
+  });
+
 function start() {
-    $(".start").hide();
-    $(".question").show();
-    next();
+  $(".start").hide();
+  $(".question").show();
+  next();
 }
 $("#A").click(function(){
-    var pType = $("#pType").val();
-    var preValue = $("#"+pType).val();
-    // console.log(parseInt(preValue)+1);
-    $("#"+pType).val(parseInt(preValue)+1);
-    next();
+  var pType = $("#pType").val();
+  var preValue = $("#"+pType).val();
+  console.log(parseInt(preValue)+1);
+  $("#"+pType).val(parseInt(preValue)+1);
+  next();
 });
 $("#B").click(function(){
     next();
@@ -46,15 +50,24 @@ function next(){
         ($("#JP").val()>=2) ? mbti += "J" : mbti += "P";
         // alert(mbti);
         for (let i = 0; i < mbtiData.length; i += 1) {
-            results.push(mbtiData[i][mbti]);
+          results.push(mbtiData[i][mbti]);
         }
-        console.log(results);
-        $("#animalImg").attr("src",results[1]);
-        $("#animalName").html(results[2]);
-        $("#explanation").html(mbti + ": " + results[0]);
+        $("#resultImg").attr("src",results[1]);
+        $("#resultType").html(mbti + " / " + results[0]);
+        $("#resultExplanation").html(results[2]);
+        $("#strength1").html(results[3]);
+        $("#strength2").html(results[4]);
+        $("#strength3").html(results[5]);
+        $("#strength4").html(results[6]);
+        $("#strength5").html(results[7]);
+        $("#weakness1").html(results[8]);
+        $("#weakness2").html(results[9]);
+        $("#weakness3").html(results[10]);
+        $("#weakness4").html(results[11]);
+        $("#weakness5").html(results[12]);
     }
     else{
-        $(".progress-bar").attr('style','width: calc(100/+' + totQNum + '*' + currQ + '%)');
+        $(".progress-bar").attr('style','width: calc(100/' + totQNum + '*' + currQ + '%); background-color: rgb(174, 46, 46);');
         $("#prob").html(q[currQ]["prob"]);
         $("#pType").val(q[currQ]["pType"]);
         $("#A").html(q[currQ]["A"]);
