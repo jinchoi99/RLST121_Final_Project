@@ -45,3 +45,6 @@ Scroll to the config vars section. Here, we will add the paths to Chrome and the
 CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver
 GOOGLE_CHROME_BIN = /app/.apt/usr/bin/google-chrome
 - deploy > connect to github
+
+Deployed website address:
+https://rlst121-digital-divination.herokuapp.com/
