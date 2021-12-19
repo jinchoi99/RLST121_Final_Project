@@ -27,3 +27,7 @@ article {
 .double-space {
   line-height: 1.5;
 }
+
+.sajuform{
+  display:none;
+}

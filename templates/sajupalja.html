@@ -50,19 +50,22 @@
     <hr>
   </div>
   <div class="container" style="position: relative;">
-    <article class="mt-4 text-center saju_explanation">
+    <article class="mt-4 text-center saju_explanation start">
       <h4 class="mt-5 mb-3" style="font-weight: bold;">What is Saju Palja?</h4>
       <h5 class=" double-space">Saju palja (사주팔자 / 四柱八字, pronounced as "Sì Zhù Ba Zi" in Chinese) is literally the four components within the moment of birth are year, month, day, and hour. Learning the concept of Fatalism with 8 characters is very popular in Korea. Everyone is born with their own 8 characters. Saju is based upon the Oriental philosophy, Yin-Yang Five Elements (음양오행설/陰陽五行說).
 
       Traditionally, Koreans usually wanted to know their yearly fourtune in a book called Tojeong's Secret Book[2] (토정비결/土亭秘訣) at the beginning of each year. At the same time, the yearly symbol under the Chinese zodiac system based on a combination of 10 Heavenly Stems and 12 Earthly Branch is interpreted in relation to the national and global circumstances. Each person’s five Elements of destiny can be interpreted through knowledge, partnership, products, career and wealth Stars, thus predicting how their relationship with the Elements of the year will be developed.[3]
       
       These days, computers and information technologies are generally used to analyze the fortune of clients by the scientific methodology of statistics. Several popular fortune tellers are relying on YouTube podcast by making an unsolicited analysis of some politicians, businessmen and entertainers.</h5>
-    <div class="mb-5 mt-5 row">
-      <section class="col-4" ></section>
-      <button type="button" class="btn btn-light col-4" style="font-size: larger; font-weight: bold; border: 2px solid black; background-color: rgb(174, 46, 46); color: white;" onclick="start();">CLICK HERE TO START TEST</button>
-    </div>
+      <div class="mb-5 mt-5 row">
+        <section class="col-4" ></section>
+        <button type="button" class="btn btn-light col-4" style="font-size: larger; font-weight: bold; border: 2px solid black; background-color: rgb(174, 46, 46); color: white;" onclick="start();">CLICK HERE TO START TEST</button>
+      </div>
     </article>
-
+    <article class="sajuform">
+      <select class="form-select" aria-label="Default select example" name="byear" id="byear">
+      </select>
+    </article>
     <p>content: <br> {{sajuresult}}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
