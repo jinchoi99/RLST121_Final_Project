@@ -19,10 +19,10 @@ def all(name, sex, year, month, day, hour):
     gChromeOptions = webdriver.ChromeOptions()
     gChromeOptions.add_argument("window-size=1920x1480")
     gChromeOptions.add_argument("disable-dev-shm-usage")
-    gChromeOptions.add_argument("--headless")
+    # gChromeOptions.add_argument("--headless")
     gChromeOptions.add_argument("--disable-dev-shm-usage")
     gChromeOptions.add_argument("--no-sandbox")
-    gChromeOptions.add_argument("headless")
+    # gChromeOptions.add_argument("headless")
     gChromeOptions.add_experimental_option("detach", True)
     driver = webdriver.Chrome(
         chrome_options=gChromeOptions, executable_path=ChromeDriverManager().install()
@@ -54,18 +54,20 @@ def all(name, sex, year, month, day, hour):
 
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    # r = soup.find(class_='one_m')
-    # dd = r.findAll("dd")
-    # birth = r.find_all("td")
     # content = soup.find(class_="content").find(class_="cont").find("dd").get_text()
+    content = soup.find(class_="content")
+    cont = content.find(class_="cont")
+    dd = cont.find("dd")
+    exp = dd.get_text()
+    exp = exp.strip()
+    # r = soup.find(class_='one_m')
+    # birth = r.find_all("td")
     # res=""
     # for i in birth:
     #     res += i.find("p").get_text()
     #     res += ": "
     #     res += i.find("img").attrs["src"]
     #     res += "\n"
-    # res += content.strip()
-    # driver.quit()
-    # with open("rest.txt", "w", encoding="utf8") as f:
-    #     f.write(str(dd))
-    return str(soup)
+    # res += content
+    driver.quit()
+    return str(exp)
