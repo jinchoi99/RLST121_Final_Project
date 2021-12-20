@@ -19,10 +19,10 @@ def all(name, sex, year, month, day, hour):
     gChromeOptions = webdriver.ChromeOptions()
     gChromeOptions.add_argument("window-size=1920x1480")
     gChromeOptions.add_argument("disable-dev-shm-usage")
-    # gChromeOptions.add_argument("--headless")
+    gChromeOptions.add_argument("--headless")
     gChromeOptions.add_argument("--disable-dev-shm-usage")
     gChromeOptions.add_argument("--no-sandbox")
-    # gChromeOptions.add_argument("headless")
+    gChromeOptions.add_argument("headless")
     gChromeOptions.add_experimental_option("detach", True)
     driver = webdriver.Chrome(
         chrome_options=gChromeOptions, executable_path=ChromeDriverManager().install()

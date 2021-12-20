@@ -6,11 +6,11 @@ function start() {
 
 function fillYears() {
   let opts = ""
-  for (let i = 1930; i < 1980; i++) {
+  for (let i = 1930; i < 1990; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
-  opts += `<option value="${1980}" selected="selected">${1980}</option>`;
-  for (let i = 1981; i < 2022; i++) {
+  opts += `<option value="${1990}" selected="selected">${1990}</option>`;
+  for (let i = 1991; i < 2022; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
   document.getElementById("byear").innerHTML += opts;
@@ -21,9 +21,10 @@ function fillMonths() {
   for (let i = 1; i <=9; i++) {
     opts += `<option value="0${i}">${i}</option>`;
   }
-  for (let i = 10; i <=12; i++) {
+  for (let i = 10; i <12; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
+  opts += `<option value="12" selected>12</option>`;
   document.getElementById("bmonth").innerHTML += opts;
 }
 
@@ -32,9 +33,10 @@ function fillDays() {
   for (let i = 1; i <=9; i++) {
     opts += `<option value="0${i}">${i}</option>`;
   }
-  for (let i = 10; i <=31; i++) {
+  for (let i = 10; i <=30; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
+  opts += `<option value="31" selected>31</option>`;
   document.getElementById("bday").innerHTML += opts;
 }
 
