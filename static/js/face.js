@@ -30,3 +30,15 @@ $('.image-upload-wrap').bind('dragover', function () {
 	$('.image-upload-wrap').bind('dragleave', function () {
 		$('.image-upload-wrap').removeClass('image-dropping');
 });
+
+function startweb() {
+  $(".start").hide();
+  location.href = "#"
+  $(".faceweb").show();
+}
+
+function startupload() {
+  $(".start").hide();
+  location.href = "#"
+  $(".faceupload").show();
+}
