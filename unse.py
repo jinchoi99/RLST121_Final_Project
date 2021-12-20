@@ -20,12 +20,17 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("Jinny")
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='frm']/div[1]/dl[3]/span[1]"))).click()
     
-    ddelement= Select(WebDriverWait(driver, 10).until(EC.element_to_be_selected((By.ID, "birth_yyyy"))))
-    ddelement.select_by_index(1)
+    
+    
+    # ddelement= Select(WebDriverWait(driver, 10).until(EC.element_to_be_selected((By.ID, "birth_yyyy"))))
+    # ddelement.select_by_index(1)
     # driver.find_element_by_css_selector("#birth_yyyy [value=\"1999\"]").click()
     # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']"))).click()
     actions = ActionChains(driver)
+    actions.send_keys(Keys.DOWN)
+    actions.send_keys(Keys.ENTER)
     actions.send_keys(Keys.ENTER)
     actions.perform()
     time.sleep(10)
