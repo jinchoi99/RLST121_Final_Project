@@ -13,12 +13,19 @@ def all():
   import time
   from selenium.common.exceptions import NoSuchElementException
 
-  driver_loc = "./chromedriver"
-  s = Service(driver_loc)
-  chrome_options = Options()
-  chrome_options.add_argument("headless")
-  chrome_options.add_experimental_option("detach", True)
-  driver = webdriver.Chrome(service=s, options=chrome_options)
+  # driver_loc = "./chromedriver"
+  # s = Service(driver_loc)
+  # chrome_options = Options()
+  # chrome_options.add_argument("headless")
+  # chrome_options.add_experimental_option("detach", True)
+  # driver = webdriver.Chrome(service=s, options=chrome_options)
+  
+  options = webdriver.ChromeOptions()
+  options.binary_location = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  chrome_driver_binary = "/usr/local/bin/chromedriver"
+  driver = webdriver.Chrome(chrome_driver_binary, chrome_options=options)
+
+
   driver.get("https://www.google.com/")
   html = driver.page_source
   # print(html)
