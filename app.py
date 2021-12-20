@@ -35,9 +35,10 @@ def calc():
   month = request.form['month_input']
   day = request.form['day_input']
   hour = request.form['hour_input']
-  # exp = unse.all(name, sex, year, month, day, hour)
-  exp =" unse.all(name, sex, year, month, day, hour)"
+  exp = unse.all(name, sex, year, month, day, hour)
+  # exp =" unse.all(name, sex, year, month, day, hour)"
   return render_template("sajupalja-result.html", rName=name, rYear=year, rMonth=month, rDay=day, rHour=hour, rSex=sex, rExp = exp)
 
 if __name__ == "__main__":
+  app.debug = True
   app.run()

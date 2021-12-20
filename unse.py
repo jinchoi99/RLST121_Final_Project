@@ -54,18 +54,18 @@ def all(name, sex, year, month, day, hour):
 
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    r = soup.find(class_='one_m')
-    dd = r.findAll("dd")
-    birth = r.find_all("td")
-    content = soup.find(class_="content").find(class_="cont").find("dd").get_text()
-    res=""
-    for i in birth:
-        res += i.find("p").get_text()
-        res += ": "
-        res += i.find("img").attrs["src"]
-        res += "\n"
-    res += content.strip()
-    driver.quit()
+    # r = soup.find(class_='one_m')
+    # dd = r.findAll("dd")
+    # birth = r.find_all("td")
+    # content = soup.find(class_="content").find(class_="cont").find("dd").get_text()
+    # res=""
+    # for i in birth:
+    #     res += i.find("p").get_text()
+    #     res += ": "
+    #     res += i.find("img").attrs["src"]
+    #     res += "\n"
+    # res += content.strip()
+    # driver.quit()
     # with open("rest.txt", "w", encoding="utf8") as f:
     #     f.write(str(dd))
-    return res
+    return str(soup)
