@@ -8,12 +8,9 @@ import time
 import os
 from selenium.webdriver.support.wait import WebDriverWait 
 import selenium.webdriver.support.expected_conditions as EC
-from pyvirtualdisplay import Display
 
 def all(name, sex, year, month, day, hour):
     url = "https://www.unsin.co.kr/unse/saju/total/form"
-    display = Display(visible=False, size=(800, 600))
-    display.start()
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     chrome_options.add_argument("--headless")
@@ -22,9 +19,8 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(name)
-    year_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))
-    select = Select(year_menu)
-    select.select_by_value(year)
+    year_menu = Select(driver.find_element(By.XPATH, "//*[@id='birth_yyyy']"))
+    year_menu.select_by_value(year)
     # if sex == "Male":
     #     sex_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='frm']/div[1]/dl[2]/dd/span[1]/label")))
     # else:
@@ -50,6 +46,5 @@ def all(name, sex, year, month, day, hour):
     # print(tds)
     
     # img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
-    display.stop()
-    # driver.quit()
+    driver.quit()
     return [html, "img1", "imgtxt1"]
