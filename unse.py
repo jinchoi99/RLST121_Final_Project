@@ -24,11 +24,6 @@ def all(name, sex, year, month, day, hour):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     yrs = soup.find(id="birth_yyyy").find_all("option")
-    printy= ""
-    for y in yrs:
-        # y.find(attrs = {'class' : 'option'})['value'] = '1999'
-        # y.string = '1999'
-        printy += y + "\n"
     # html = driver.page_source
     # actions = ActionChains(driver)
     # actions.send_keys(Keys.ENTER)
@@ -42,4 +37,4 @@ def all(name, sex, year, month, day, hour):
     
     # img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
     driver.quit()
-    return [printy, "img1", "imgtxt1"]
+    return [yrs, "img1", "imgtxt1"]
