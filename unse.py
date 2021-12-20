@@ -22,7 +22,7 @@ def all(name, sex, year, month, day, hour):
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("Jinny")
     # ddelement= Select(driver.find_element_by_id('birth_yyyy'))
     # ddelement.select_by_index(1)
-    driver.find_element_by_css_selector("#birth_yyyy [value='1999']").click()
+    driver.find_element_by_css_selector("#birth_yyyy [value=\"1999\"]").click()
     # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']"))).click()
     actions = ActionChains(driver)
     actions.send_keys(Keys.ENTER)
