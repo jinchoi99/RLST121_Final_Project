@@ -20,19 +20,21 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(name)
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='user_name']")))
     
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    yrs = soup.find(id="birth_yyyy").find_all("option")
-    for y in yrs:
-        y.find("option")['value'] = "1999"
+    
     # html = driver.page_source
-    # actions = ActionChains(driver)
-    # actions.send_keys(Keys.ENTER)
-    # actions.perform()
-    # time.sleep(10)
-    # html2 = driver.page_source
+    # soup = BeautifulSoup(html, 'html.parser')
+    # yrs = soup.find(id="birth_yyyy").find_all("option")
+    # for y in yrs:
+    #     y.find("option")['value'] = "1999"
+        
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']/option[1]"))).click()
+    # html = driver.page_source
+    actions = ActionChains(driver)
+    actions.send_keys(Keys.ENTER)
+    actions.perform()
+    time.sleep(10)
+    html2 = driver.page_source
     # context = driver.find_element(By.XPATH, "/html/body/div[2]/div/div[2]/div/div/div/div/div[3]/dl[1]/dd").text
     # imgtxt1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID,"sjms_side")))
     # tds = WebDriverWait(imgtxt1, 10).until(EC.element_to_be_clickable((By.TAG_NAME,"td")))
@@ -40,4 +42,4 @@ def all(name, sex, year, month, day, hour):
     
     # img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
     driver.quit()
-    return [yrs[0], "img1", "imgtxt1"]
+    return [html2, "img1", "imgtxt1"]
