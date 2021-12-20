@@ -27,7 +27,7 @@ def all(name, sex, year, month, day, hour):
     printy= ""
     for y in yrs:
         # y.find(attrs = {'class' : 'option'})['value'] = '1999'
-        y.string = '1999'
+        # y.string = '1999'
         printy += y + "\n"
     # html = driver.page_source
     # actions = ActionChains(driver)
