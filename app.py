@@ -42,5 +42,4 @@ def calc():
     return render_template("sajupalja.html")
 
 if __name__ == "__main__":
-  app.debug = True
   app.run()
