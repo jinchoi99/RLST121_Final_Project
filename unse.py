@@ -20,6 +20,7 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(name)
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//*[@id='user_name']")))
     
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
@@ -37,4 +38,4 @@ def all(name, sex, year, month, day, hour):
     
     # img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
     driver.quit()
-    return [yrs, "img1", "imgtxt1"]
+    return [yrs[0], "img1", "imgtxt1"]
