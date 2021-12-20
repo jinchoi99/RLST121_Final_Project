@@ -11,3 +11,20 @@
 #project_title {
   font-family: 'Redressed', cursive;
 }
+
+
+article {
+  display: flex;
+  flex-direction: column;
+}
+
+.fr_explanation {
+  background-color: wheat;
+  border-radius: 25px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.double-space {
+  line-height: 1.5;
+}

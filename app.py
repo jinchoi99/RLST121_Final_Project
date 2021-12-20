@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request
-import testp
+# import testp
 
 app = Flask(__name__)
 
-@app.route("/testp")
-def testpp():
-  hi = testp.all()
-  return render_template("index.html", rhi=hi)
-
+# @app.route("/testp")
+# def testpp():
+#   hi = testp.all()
+#   return render_template("index.html", rhi=hi)
 
 @app.route("/")
 def home():
