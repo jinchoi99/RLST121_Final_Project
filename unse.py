@@ -9,7 +9,6 @@ import os
 from selenium.webdriver.support.wait import WebDriverWait 
 import selenium.webdriver.support.expected_conditions as EC
 
-
 def all(name, sex, year, month, day, hour):
     url = "https://www.unsin.co.kr/unse/saju/total/form"
     
@@ -21,8 +20,8 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(str(name))
-    # year_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))
-    # select = Select(year_menu)
+    year_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))
+    select = Select(year_menu)
     # if sex == "Male":
     #     sex_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='frm']/div[1]/dl[2]/dd/span[1]/label")))
     # else:
