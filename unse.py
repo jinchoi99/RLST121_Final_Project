@@ -21,7 +21,7 @@ def all(name, sex, year, month, day, hour):
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(name)
     # year_menu = Select(WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))).select_by_value(year)
     selects = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "birth_yyyy"))).find_element_by_tag_name("option")
-    # opts = ""
+    opts = ""
     # for s in selects:
     #     driver.execute_script("arguments[0].setAttribute('value',arguments[1])", s, "1999")
     #     opts += s
