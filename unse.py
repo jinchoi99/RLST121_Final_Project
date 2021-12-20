@@ -20,13 +20,12 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("Jinny")
-    # html = driver.page_source
-    # soup = BeautifulSoup(html, 'html.parser')
-    # yrs = soup.find(id="birth_yyyy").find_all("option")
-    # for y in yrs:
-    #     y.find("option")['value'] = "1999"
-    (WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']/option[1]")))).click()
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']"))).click()
     actions = ActionChains(driver)
+    actions.send_keys(Keys.DOWN)
+    actions.send_keys(Keys.DOWN)
+    actions.send_keys(Keys.DOWN)
+    actions.send_keys(Keys.ENTER)
     actions.send_keys(Keys.ENTER)
     actions.perform()
     time.sleep(10)
