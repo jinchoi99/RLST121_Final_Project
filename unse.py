@@ -20,11 +20,6 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(name)
-    # year_menu = Select(WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))).select_by_value(year)
-    selects = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "birth_yyyy"))).find_element_by_tag_name("option")
-    opts = ""
-    
-    
     
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
