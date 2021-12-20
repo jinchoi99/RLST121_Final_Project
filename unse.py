@@ -60,4 +60,4 @@ def all(name, sex, year, month, day, hour):
     img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
     
     
-    return ["context", img1, imgtxt1]
+    return ["context", "img1", "imgtxt1"]
