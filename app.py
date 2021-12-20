@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
+import prac
 
 app = Flask(__name__)
 
 @app.route("/prac")
-def prac():
-  return render_template("home.html")
+def pract():
+  hi = "title is!!!" + prac.pp()
+  return render_template("index.html",rhi=hi)
 
 @app.route("/")
 def home():
