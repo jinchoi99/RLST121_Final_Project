@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash
 import unse
+import unse1
 
 app = Flask(__name__)
 
@@ -35,8 +36,8 @@ def calc():
   month = str(request.form['month_input'])
   day = str(request.form['day_input'])
   hour = str(request.form['hour_input'])
-  # exp = unse.all(name, sex, year, month, day, hour)
-  exp = unse.all()
+  exp = unse1.all(name, sex, year, month, day, hour)
+  # exp = unse.all()
   # exp =" unse.all(name, sex, year, month, day, hour)"
   return render_template("sajupalja-result.html", rName=name, rYear=year, rMonth=month, rDay=day, rHour=hour, rSex=sex, rExp = exp)
 
