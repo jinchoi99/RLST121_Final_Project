@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request
 import unse
 
 app = Flask(__name__)
@@ -27,16 +27,19 @@ def facereader():
 def sajupalja():
   return render_template("sajupalja.html")
 
-@app.route("/calc", methods=["POST"])
+@app.route("/calc", methods=['GET', 'POST'])
 def calc():
-  name = str(request.form['name_input'])
-  sex = str(request.form['sex_input'])
-  year = str(request.form['year_input'])
-  month = str(request.form['month_input'])
-  day = str(request.form['day_input'])
-  hour = str(request.form['hour_input'])
-  [exp, img, imgtxt] = unse.all(name, sex, year, month, day, hour)
-  return render_template("sajupalja-result.html", rName=name, rYear=year, rMonth=month, rDay=day, rHour=hour, rSex=sex, rExp = exp, rImg = img, rTxt = imgtxt)
+  if request.method == 'POST':
+    name = str(request.form['name_input'])
+    sex = str(request.form['sex_input'])
+    year = str(request.form['year_input'])
+    month = str(request.form['month_input'])
+    day = str(request.form['day_input'])
+    hour = str(request.form['hour_input'])
+    [exp, img, imgtxt] = unse.all(name, sex, year, month, day, hour)
+    return render_template("sajupalja-result.html", rName=name, rYear=year, rMonth=month, rDay=day, rHour=hour, rSex=sex, rExp = exp, rImg = img, rTxt = imgtxt)
+  else:
+    return render_template("sajupalja.html")
 
 if __name__ == "__main__":
   app.debug = True
