@@ -43,11 +43,11 @@ def all(name, sex, year, month, day, hour):
     actions.perform()
     time.sleep(10)
     
-    # context = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div/div[2]/div/div/div/div/div[3]/dl[1]/dd"))).text
+    context = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[2]/div/div[2]/div/div/div/div/div[3]/dl[1]/dd"))).text
     
     # imgtxt1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/p"))).text
     
     # img1 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='sjms_side']/table/tbody/tr[1]/td[2]/img"))).get_attribute("src")
     
     
-    return ["context", "img1", "imgtxt1"]
+    return [context, "img1", "imgtxt1"]
