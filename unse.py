@@ -21,9 +21,6 @@ def all(name, sex, year, month, day, hour):
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("Jinny")
     
-    ddelement= Select(WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "birth_yyyy"))))
-    ddelement.select_by_index(1)
-    
     ddelement= Select(WebDriverWait(driver, 10).until(EC.element_to_be_selected((By.ID, "birth_yyyy"))))
     ddelement.select_by_index(1)
     # driver.find_element_by_css_selector("#birth_yyyy [value=\"1999\"]").click()
