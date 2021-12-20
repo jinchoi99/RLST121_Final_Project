@@ -20,7 +20,7 @@ def all(name, sex, year, month, day, hour):
     driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("Jinny")
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']"))).click()
+    # WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']"))).click()
     actions = ActionChains(driver)
     actions.send_keys(Keys.DOWN)
     actions.send_keys(Keys.DOWN)
