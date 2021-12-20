@@ -18,7 +18,10 @@ function fillYears() {
 
 function fillMonths() {
   let opts = ""
-  for (let i = 1; i <=12; i++) {
+  for (let i = 1; i <=9; i++) {
+    opts += `<option value="0${i}">${i}</option>`;
+  }
+  for (let i = 10; i <=12; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
   document.getElementById("bmonth").innerHTML += opts;
@@ -26,7 +29,10 @@ function fillMonths() {
 
 function fillDays() {
   let opts = ""
-  for (let i = 1; i <=31; i++) {
+  for (let i = 1; i <=9; i++) {
+    opts += `<option value="0${i}">${i}</option>`;
+  }
+  for (let i = 10; i <=31; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
   document.getElementById("bday").innerHTML += opts;

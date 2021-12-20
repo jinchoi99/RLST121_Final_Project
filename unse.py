@@ -13,7 +13,7 @@ import os
 from selenium.webdriver.support.wait import WebDriverWait 
 import selenium.webdriver.support.expected_conditions as EC
 
-def all():
+def all(name, sex, year, month, day, hour):
     url = "https://www.unsin.co.kr/unse/saju/total/form"
     
     gChromeOptions = webdriver.ChromeOptions()
@@ -29,18 +29,24 @@ def all():
     )
 
     driver.get(url)
-    # usrname = driver.find_element(By.XPATH, "//*[@id='user_name']")
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys("허문이")
-    # usrname.send_keys("허문이")
-    # year_menu = driver.find_element(By.XPATH, "//*[@id='birth_yyyy']")
-    # select = Select(year_menu)
-    # select.select_by_value('2000')
-    # month_menu = driver.find_element(By.XPATH, "//*[@id='birth_mm']")
-    # select = Select(month_menu)
-    # select.select_by_value('08')
-    # day_menu = driver.find_element(By.XPATH, "//*[@id='birth_dd']")
-    # select = Select(day_menu)
-    # select.select_by_value('07')
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='user_name']"))).send_keys(str(name))
+    year_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_yyyy']")))
+    select = Select(year_menu)
+    if sex == "Male":
+        sex_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='frm']/div[1]/dl[2]/dd/span[1]/label")))
+    else:
+        sex_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='frm']/div[1]/dl[2]/dd/span[2]/label")))
+    sex_menu.click()
+    select.select_by_value(str(year))
+    month_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_mm']")))
+    select = Select(month_menu)
+    select.select_by_value(str(month))
+    day_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_dd']")))
+    select = Select(day_menu)
+    select.select_by_value(str(day))
+    hour_menu = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='birth_hh']")))
+    select = Select(hour_menu)
+    select.select_by_value(str(hour))
     actions = ActionChains(driver)
     actions.send_keys(Keys.ENTER)
     actions.perform()
@@ -49,8 +55,6 @@ def all():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     r = soup.find(class_='one_m')
-    gender = r.find(class_='gender')
-    name = r.find(id_='sjms_side')
     dd = r.findAll("dd")
     birth = r.find_all("td")
     content = soup.find(class_="content").find(class_="cont").find("dd").get_text()
@@ -62,4 +66,6 @@ def all():
         res += "\n"
     res += content.strip()
     driver.quit()
+    # with open("rest.txt", "w", encoding="utf8") as f:
+    #     f.write(str(dd))
     return res
