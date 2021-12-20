@@ -10,5 +10,5 @@ function fillResults(date) {
   // for (let i = 0; i < sData.length; i += 1) {
   //   results.push(sData[i][0]);
   // }
-  alert("helloworld")
+  alert("date")
 }
