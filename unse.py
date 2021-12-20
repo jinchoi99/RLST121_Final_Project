@@ -25,6 +25,8 @@ def all(name, sex, year, month, day, hour):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     yrs = soup.find(id="birth_yyyy").find_all("option")
+    for y in yrs:
+        y.find("option")['value'] = "1999"
     # html = driver.page_source
     # actions = ActionChains(driver)
     # actions.send_keys(Keys.ENTER)
