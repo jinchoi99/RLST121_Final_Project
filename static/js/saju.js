@@ -6,11 +6,11 @@ function start() {
 
 function fillYears() {
   let opts = ""
-  for (let i = 1930; i < 1990; i++) {
+  for (let i = 1997; i < 2000; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
-  opts += `<option value="${1990}" selected="selected">${1990}</option>`;
-  for (let i = 1991; i < 2022; i++) {
+  opts += `<option value="${2000}" selected="selected">${2000}</option>`;
+  for (let i = 2001; i < 2005; i++) {
     opts += `<option value="${i}">${i}</option>`;
   }
   document.getElementById("byear").innerHTML += opts;
