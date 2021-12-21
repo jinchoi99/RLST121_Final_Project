@@ -52,22 +52,34 @@
   </div>
   <div class="container" style="position: relative;">
     <article class="mt-4 saju_explanation">
-      <p>name: <br> {{rName}}</p>
-      <p>year: <br> {{rYear}}</p>
-      <p>month: <br> {{rMonth}}</p>
-      <p>day: <br> {{rDay}}</p>
-      <p>hour: <br> {{rHour}}</p>
-      <p>sex: <br> {{rSex}}</p>
-      <p>exp: <br> {{rExp}}</p>
-      <img src={{rImg}} alt="hello" style="width: 100px; height: 100px;">
-      <p>rTxt: {{rTxt}}</p>
+      <section class="mt-5 mb-5 mx-5">
+        <ul>
+          <li><h3>Name: {{rName}}</h3></li>
+          <li><h3>Date of Birth: {{rYear}}/{{rMonth}}/{{rDay}}</h3></li>
+          <li><h3>Hour: {{rHour}}</h3></li>
+          <li><h3>Sex: {{rSex}}</h3></li>
+          <li><h3>Saju Palja (8 Characters):</h3>
+            <ul>
+              <li><h3 id="char1" ></h3><img id="char1img" src="" alt="character1"></li>
+              <li><h3 id="char2" ></h3><img id="char2img" src="" alt="character2"></li>
+              <li><h3 id="char3" ></h3><img id="char3img" src="" alt="character3"></li>
+              <li><h3 id="char4" ></h3><img id="char4img" src="" alt="character4"></li>
+              <li><h3 id="char5" ></h3><img id="char5img" src="" alt="character5"></li>
+              <li><h3 id="char6" ></h3><img id="char6img" src="" alt="character6"></li>
+              <li><h3 id="char7" ></h3><img id="char7img" src="" alt="character7"></li>
+              <li><h3 id="char8" ></h3><img id="char8img" src="" alt="character8"></li>
+            </ul>
+          </li>
+          <li><h3>Explanation: <br></h3><h4 id="saju_exp"></h4></li>
+        </ul>
+      </section>
     </article>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script type = "text/javascript" src="/static/js/sajuResult.js"></script>
   <script>
-    fillResults(`{{rYear}}/{{rMonth}}/{{rDay}}`);
+    start(`{{rYear}}/{{rMonth}}/{{rDay}}`);
   </script>
 </body>
 </html>

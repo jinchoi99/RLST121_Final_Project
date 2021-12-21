@@ -35,3 +35,12 @@ article {
   padding-right: 20px;
   padding-left: 20px;
 }
+
+li {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+img{
+  width: 100px;
+}
